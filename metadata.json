@@ -1,0 +1,6 @@
+{
+  "name": "Playland Pineville",
+  "description": "Indoor Playground & Café in Pineville, North Carolina. Modern redesign for family adventures, toddler play, specialty coffee, and unforgettable birthday parties.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
