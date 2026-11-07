@@ -2,6 +2,7 @@ import React from 'react';
 import { PageRoute, GalleryPhoto } from '../../types';
 import { PLAYGROUND_ATTRACTIONS, GALLERY_PHOTOS, BUSINESS_INFO } from '../../data/initialData';
 import { useCms } from '../../context/CmsContext';
+import { IMAGES } from '../../assets/images';
 import {
   Sparkles,
   ArrowRight,
@@ -92,7 +93,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenPhoto }) =
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100 group">
                 <img
-                  src="/src/assets/images/hero_playground_1794032542616.jpg"
+                  src={IMAGES.heroPlayground}
                   alt="Playland Pineville indoor playground featuring climbing structures, slides, and family lounge"
                   referrerPolicy="no-referrer"
                   className="w-full h-[380px] sm:h-[460px] object-cover group-hover:scale-102 transition-transform duration-700"
@@ -114,7 +115,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenPhoto }) =
                         id: 'hero',
                         title: 'Playland Pineville Main Play Area',
                         category: 'playground',
-                        image: '/src/assets/images/hero_playground_1794032542616.jpg',
+                        image: IMAGES.heroPlayground,
                         caption: 'Spacious climate-controlled play arena with multi-tiered tubes and slides.',
                       })
                     }
@@ -239,7 +240,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenPhoto }) =
             {/* Left Image */}
             <div className="lg:col-span-6 relative h-[360px] lg:h-[480px]">
               <img
-                src="/src/assets/images/cafe_experience_1794032544524.jpg"
+                src={IMAGES.cafeExperience}
                 alt="Cozy parent café at Playland Pineville with specialty espresso and relaxing seating"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover"
@@ -343,7 +344,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenPhoto }) =
           <div className="lg:col-span-6 relative">
             <div className="rounded-3xl overflow-hidden shadow-xl border-4 border-[#FFF5E8]">
               <img
-                src="/src/assets/images/birthday_party_room_1794032544796.jpg"
+                src={IMAGES.birthdayPartyRoom}
                 alt="Playland Pineville decorated private birthday party suite"
                 referrerPolicy="no-referrer"
                 className="w-full h-80 sm:h-96 object-cover"

@@ -1,4 +1,5 @@
 import { AdmissionPricing, PartyPackage, AttractionItem, GalleryPhoto, FaqItem } from '../types';
+import { IMAGES } from '../assets/images';
 
 export const BUSINESS_INFO = {
   name: 'Playland Pineville',
@@ -124,7 +125,7 @@ export const PLAYGROUND_ATTRACTIONS: AttractionItem[] = [
     title: 'Giant Slides',
     shortDesc: 'Twin enclosed spirals and multi-lane speed slides engineered for thrilling yet gentle landings.',
     longDesc: 'Our centerpiece giant twin spiral slides in signature teal and orange deliver exhilarating drops into soft cushioned exit zones. Designed with ultra-smooth anti-friction material and high safety barriers for safe continuous fun.',
-    image: '/src/assets/images/giant_slides_ballpit_1794032544545.jpg',
+    image: IMAGES.giantSlidesBallpit,
     tags: ['Ages 3–10', 'High Energy', 'Spiral Slides'],
   },
   {
@@ -132,7 +133,7 @@ export const PLAYGROUND_ATTRACTIONS: AttractionItem[] = [
     title: 'Ball Pits',
     shortDesc: 'Deep seas of vibrant sanitized turquoise and sunshine yellow balls for immersive sensory joy.',
     longDesc: 'Kids love diving and splashing through thousands of medical-grade, pressure-tested plastic balls. Sanitized daily using our automated sanitizing cycle to guarantee pure cleanliness and hygienic peace of mind.',
-    image: '/src/assets/images/giant_slides_ballpit_1794032544545.jpg',
+    image: IMAGES.giantSlidesBallpit,
     tags: ['All Ages', 'Sensory Play', 'Daily Sanitized'],
   },
   {
@@ -140,7 +141,7 @@ export const PLAYGROUND_ATTRACTIONS: AttractionItem[] = [
     title: 'Climbing Structures',
     shortDesc: 'Multi-tiered soft obstacle mazes, rope webs, and climbing walls that develop agility and confidence.',
     longDesc: 'A 3-story labyrinth of padded vertical climbs, honeycomb platforms, and safety net-enclosed tiers. Children build spatial awareness, motor skills, and balance in a 100% foam-cushioned environment.',
-    image: '/src/assets/images/hero_playground_1794032542616.jpg',
+    image: IMAGES.heroPlayground,
     tags: ['Active Play', 'Motor Skills', 'Padded Safety'],
   },
   {
@@ -148,7 +149,7 @@ export const PLAYGROUND_ATTRACTIONS: AttractionItem[] = [
     title: 'Tunnels & Bridges',
     shortDesc: 'Suspended rope walkway bridges, transparent lookout tubes, and zigzag crawl passages.',
     longDesc: 'Elevated suspension bridges allow kids to cross the play zone high above the floor with panoramic views through safety netting. Transparent circular bubble windows let little explorers wave down to parents sipping coffee.',
-    image: '/src/assets/images/hero_playground_1794032542616.jpg',
+    image: IMAGES.heroPlayground,
     tags: ['Adventure', 'Exploration', 'Aerial Views'],
   },
   {
@@ -156,7 +157,7 @@ export const PLAYGROUND_ATTRACTIONS: AttractionItem[] = [
     title: 'Toddler Play Area',
     shortDesc: 'Dedicated soft pastel sanctuary exclusively for babies and toddlers under 3 years old.',
     longDesc: 'Separated from the bustling big-kid zone by low cushioned partitions, our toddler area features gentle foam stairs, low-angle mini slides, interactive sensory gear walls, and a miniature ball pool designed specifically for early walkers.',
-    image: '/src/assets/images/toddler_soft_play_1794032544466.jpg',
+    image: IMAGES.toddlerSoftPlay,
     tags: ['Ages 0–3', 'Soft Foam', 'Sensory Walls'],
   },
   {
@@ -164,7 +165,7 @@ export const PLAYGROUND_ATTRACTIONS: AttractionItem[] = [
     title: 'Interactive Play Experiences',
     shortDesc: 'Engaging tactile game panels, giant foam building blocks, and sensory wall puzzles.',
     longDesc: 'Beyond running and climbing, children enjoy mind-stimulating activities including magnetic gear wheels, tactile tactile maze boards, giant architectural building blocks, and cooperative games that spark friendship.',
-    image: '/src/assets/images/toddler_soft_play_1794032544466.jpg',
+    image: IMAGES.toddlerSoftPlay,
     tags: ['Creative Thinking', 'Cooperative', 'Mind & Motion'],
   },
 ];
@@ -174,35 +175,35 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     id: 'g1',
     title: 'Playland Main Climbing Center',
     category: 'playground',
-    image: '/src/assets/images/hero_playground_1794032542616.jpg',
+    image: IMAGES.heroPlayground,
     caption: 'Spacious multi-tiered playground with natural light, orange and teal tubes, and parent seating.',
   },
   {
     id: 'g2',
     title: 'Twin Spiral Slides & Yellow Ball Pit',
     category: 'slides',
-    image: '/src/assets/images/giant_slides_ballpit_1794032544545.jpg',
+    image: IMAGES.giantSlidesBallpit,
     caption: 'Fast spiral slides diving directly into thousands of clean, sanitized balls.',
   },
   {
     id: 'g3',
     title: 'Dedicated Toddler Soft Zone',
     category: 'toddlers',
-    image: '/src/assets/images/toddler_soft_play_1794032544466.jpg',
+    image: IMAGES.toddlerSoftPlay,
     caption: 'Safe, low-profile foam slides, tactile gear boards, and mini ball pit for ages 0–3.',
   },
   {
     id: 'g4',
     title: 'Artisan Parent Café & Barista Bar',
     category: 'cafe',
-    image: '/src/assets/images/cafe_experience_1794032544524.jpg',
+    image: IMAGES.cafeExperience,
     caption: 'Specialty espresso, warm wooden tables, and relaxed parents watching kids play.',
   },
   {
     id: 'g5',
     title: 'Celebration Birthday Party Suite',
     category: 'parties',
-    image: '/src/assets/images/birthday_party_room_1794032544796.jpg',
+    image: IMAGES.birthdayPartyRoom,
     caption: 'Decorated private birthday room with festive balloons, party hats, and dedicated host setup.',
   },
 ];

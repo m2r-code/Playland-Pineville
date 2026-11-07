@@ -2,6 +2,7 @@ import React from 'react';
 import { PageRoute } from '../../types';
 import { BUSINESS_INFO } from '../../data/initialData';
 import { Heart, ShieldCheck, Sparkles, Coffee, Smile, CheckCircle, Users } from 'lucide-react';
+import { IMAGES } from '../../assets/images';
 
 interface AboutUsPageProps {
   onNavigate: (route: PageRoute) => void;
@@ -31,7 +32,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-6 rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-slate-100 h-80 sm:h-96">
             <img
-              src="/src/assets/images/hero_playground_1794032542616.jpg"
+              src={IMAGES.heroPlayground}
               alt="Playland Pineville playground and family area"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover"
@@ -121,7 +122,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
 
           <div className="lg:col-span-6 order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-slate-100 h-80 sm:h-96">
             <img
-              src="/src/assets/images/cafe_experience_1794032544524.jpg"
+              src={IMAGES.cafeExperience}
               alt="Clean café and parents enjoying coffee at Playland Pineville"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover"

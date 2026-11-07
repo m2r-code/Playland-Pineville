@@ -2,6 +2,7 @@ import React from 'react';
 import { PageRoute } from '../../types';
 import { Coffee, Wifi, Sparkles, Heart, Smile, CheckCircle, ArrowRight } from 'lucide-react';
 import { useCms } from '../../context/CmsContext';
+import { IMAGES } from '../../assets/images';
 
 interface CafePageProps {
   onNavigate: (route: PageRoute) => void;
@@ -64,7 +65,7 @@ export const CafePage: React.FC<CafePageProps> = ({ onNavigate }) => {
 
           <div className="lg:col-span-6 rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-slate-100 h-80 sm:h-96">
             <img
-              src="/src/assets/images/cafe_experience_1794032544524.jpg"
+              src={IMAGES.cafeExperience}
               alt="Artisan coffee bar and parents relaxing at Playland Pineville"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover"

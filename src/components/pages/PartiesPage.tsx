@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { PageRoute } from '../../types';
 import { useCms } from '../../context/CmsContext';
 import { BUSINESS_INFO, FAQS_DATA } from '../../data/initialData';
+import { IMAGES } from '../../assets/images';
 import {
   Cake,
   Sparkles,
@@ -84,7 +85,7 @@ export const PartiesPage: React.FC<PartiesPageProps> = ({ onNavigate }) => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100 h-72 sm:h-96">
           <img
-            src="/src/assets/images/birthday_party_room_1794032544796.jpg"
+            src={IMAGES.birthdayPartyRoom}
             alt="Decorated birthday party room at Playland Pineville"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover"
