@@ -1,28 +1,29 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --color-orange: #F47738;
-    --color-yellow: #F6C84A;
-    --color-teal: #4BBBD0;
-    --color-navy: #243D50;
-    --color-cream: #FFF5E8;
-    --color-gray: #F5F6F4;
-  }
+:root {
+  --color-orange: #F47738;
+  --color-yellow: #F6C84A;
+  --color-teal: #4BBBD0;
+  --color-navy: #243D50;
+  --color-cream: #FFF5E8;
+  --color-gray: #F5F6F4;
+}
 
-  body {
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    color: #243D50;
-    background-color: #FAFAF8;
-  }
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: #243D50;
+  background-color: #FAFAF8;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
 
-  h1, h2, h3, h4, .font-heading {
-    font-family: 'Fredoka', cursive, sans-serif;
-  }
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Fredoka', cursive, sans-serif;
+}
 
-  .font-btn {
-    font-family: 'Poppins', sans-serif;
-  }
+.font-btn {
+  font-family: 'Poppins', sans-serif;
 }
 
 html {

@@ -16,43 +16,72 @@ interface CmsContextType {
 const STORAGE_KEY_PRICING = 'playland_pineville_pricing_v1';
 const STORAGE_KEY_PACKAGES = 'playland_pineville_packages_v1';
 
+const safeGetItem = (key: string): string | null => {
+  try {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      return window.localStorage.getItem(key);
+    }
+  } catch {
+    // Sandbox or blocked iframe storage
+  }
+  return null;
+};
+
+const safeSetItem = (key: string, val: string): void => {
+  try {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      window.localStorage.setItem(key, val);
+    }
+  } catch {
+    // Sandbox or blocked iframe storage
+  }
+};
+
+const safeRemoveItem = (key: string): void => {
+  try {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      window.localStorage.removeItem(key);
+    }
+  } catch {
+    // Sandbox or blocked iframe storage
+  }
+};
+
 const CmsContext = createContext<CmsContextType | undefined>(undefined);
 
 export const CmsProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [pricing, setPricing] = useState<AdmissionPricing>(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY_PRICING);
-      return saved ? JSON.parse(saved) : DEFAULT_ADMISSION_PRICING;
-    } catch {
-      return DEFAULT_ADMISSION_PRICING;
+    const saved = safeGetItem(STORAGE_KEY_PRICING);
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch {
+        return DEFAULT_ADMISSION_PRICING;
+      }
     }
+    return DEFAULT_ADMISSION_PRICING;
   });
 
   const [partyPackages, setPartyPackages] = useState<PartyPackage[]>(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY_PACKAGES);
-      return saved ? JSON.parse(saved) : DEFAULT_PARTY_PACKAGES;
-    } catch {
-      return DEFAULT_PARTY_PACKAGES;
+    const saved = safeGetItem(STORAGE_KEY_PACKAGES);
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch {
+        return DEFAULT_PARTY_PACKAGES;
+      }
     }
+    return DEFAULT_PARTY_PACKAGES;
   });
 
   const [isCmsOpen, setIsCmsOpen] = useState(false);
 
   useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY_PRICING, JSON.stringify(pricing));
-    } catch (e) {
-      console.warn('Could not save pricing to localStorage', e);
-    }
+    safeSetItem(STORAGE_KEY_PRICING, JSON.stringify(pricing));
   }, [pricing]);
 
   useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY_PACKAGES, JSON.stringify(partyPackages));
-    } catch (e) {
-      console.warn('Could not save packages to localStorage', e);
-    }
+    safeSetItem(STORAGE_KEY_PACKAGES, JSON.stringify(partyPackages));
   }, [partyPackages]);
 
   const updatePricing = (newPricing: AdmissionPricing) => {
@@ -66,12 +95,8 @@ export const CmsProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const resetDefaults = () => {
     setPricing(DEFAULT_ADMISSION_PRICING);
     setPartyPackages(DEFAULT_PARTY_PACKAGES);
-    try {
-      localStorage.removeItem(STORAGE_KEY_PRICING);
-      localStorage.removeItem(STORAGE_KEY_PACKAGES);
-    } catch (e) {
-      console.warn(e);
-    }
+    safeRemoveItem(STORAGE_KEY_PRICING);
+    safeRemoveItem(STORAGE_KEY_PACKAGES);
   };
 
   return (
